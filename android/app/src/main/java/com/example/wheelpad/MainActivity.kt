@@ -37,6 +37,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.Dp
 import androidx.compose.runtime.snapshots.SnapshotStateMap
 
 // Button bits (must match pc_server.py)
