@@ -6,10 +6,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.11" }
+        with:
+          python-version: "3.11"
       - run: pip install -r pc/requirements.txt pyinstaller
       - run: pyinstaller --onefile --noconsole --collect-all vgamepad --name WheelPadServer pc/wheelpad_server.py
+      - run: |
+          mkdir release
+          copy dist\WheelPadServer.exe release\WheelPadServer.exe
+          copy pc\Install-WheelPad.bat release\Install-WheelPad.bat
+          copy pc\Uninstall-WheelPad.bat release\Uninstall-WheelPad.bat
       - uses: actions/upload-artifact@v4
         with:
-          name: WheelPadServer-exe
-          path: dist/WheelPadServer.exe
+          name: WheelPad-PC-Windows
+          path: release
