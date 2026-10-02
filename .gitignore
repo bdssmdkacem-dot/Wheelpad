@@ -1,0 +1,13 @@
+# Android
+*.iml
+.gradle/
+.idea/
+local.properties
+build/
+captures/
+*.apk
+# Python / PyInstaller
+__pycache__/
+*.pyc
+dist/
+*.spec
